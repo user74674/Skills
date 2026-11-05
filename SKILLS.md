@@ -1,6 +1,6 @@
 # Installed Agent Skills
 
-**394 unique skills** installed on 2026-11-05 in `.opencode/skills/` (158 in the first pass, 234 added in the second, 2 added in the third).
+**435 unique skills** installed in `.opencode/skills/` (158 in the first pass, 234 added in the second, 2 added in the third on 2026-11-05; 41 explainer-video and engineering skills added in the fourth pass on 2026-11-06).
 
 OpenCode discovers them automatically from `.opencode/skills/<name>/SKILL.md`.
 Each skill keeps its original structured folder (`references/`, `scripts/`, `assets/`, companions).
@@ -28,6 +28,14 @@ A `SOURCE.md` in each folder records the upstream repository, path, and license.
 | win4r/video-director | 1 |
 | Vincentwei1021/video-shotcraft | 1 |
 | harry0703/MoneyPrinterTurbo (official agent skill) | 1 |
+| alchaincyf/huashu-motion | 1 |
+| rossark0/rossark-motion-skill | 1 |
+| talsiach/take-one | 1 |
+| vincentsch/explainroo | 1 |
+| Leonxlnx/earshot | 2 |
+| heygen-com/hyperframes | 9 |
+| blader/humanizer | 1 |
+| addyosmani/agent-skills | 25 |
 
 ## All skills by source
 
@@ -373,6 +381,87 @@ Authored, deterministic, code-driven motion ranks above assembled stock footage.
 | 6 | GSAP suite (8) | DOM engine | Scroll- and UI-driven storytelling when the video is a webpage. |
 | 7 | `moneyprinterturbo-video` | Assembly bot, not a story engine | Topic → finished MP4 in one command (stock footage + TTS). Drafts and fast faceless shorts; elements illustrate the story, they don't perform it. |
 
+### huashu-motion (single skill)
+
+Upstream: https://github.com/alchaincyf/huashu-motion
+
+- `huashu-motion` — motion graphics, launch videos and explainers as editable code; a director picks the motion language and you point at frames to change them. Templates, fonts and the render runtime live in the upstream repo (npm).
+
+### rossark-motion-skill
+
+Upstream: https://github.com/rossark0/rossark-motion-skill
+
+- `rossark-motion-skill` — bring any drawn thing to life (characters, plants, fire, water, machines, logos, charts) with calm believable motion; motion engine + templates for React Native/SVG/SwiftUI, reference-video measuring tools, offline render to video.
+
+### take-one
+
+Upstream: https://github.com/talsiach/take-one
+
+- `take-one` — turn a short request into a finished short film rendered from code, working like a studio team of twelve jobs; pitches the best route, budgets spend, reviews the cut against a bar. References cover music video, voice, vertical, captions, formats and more.
+
+### explainroo
+
+Upstream: https://github.com/vincentsch/explainroo
+
+- `explainroo` — make an explainer video (MP4) with a fully local voice-over (no API key); script + scenes in markdown, rendered by the upstream npm engine.
+
+### earshot (2 skills)
+
+Upstream: https://github.com/Leonxlnx/earshot
+
+- `earshot` — real-sound design for video: describe, find, fit, compare and critique audio against the picture (upstream Python CLI `earshot`).
+- `real-sound` — companion sound-design judgement: what real sound should be for a scene, with references, scripts and templates.
+
+### heygen-com/hyperframes (9 skills)
+
+Upstream: https://github.com/heygen-com/hyperframes
+
+- `figma`
+- `hyperframes`
+- `hyperframes-cli`
+- `hyperframes-registry`
+- `media-use`
+- `remotion-to-hyperframes`
+- `reverse-any-video`
+- `slideshow`
+- `style-sampling`
+
+### humanizer
+
+Upstream: https://github.com/blader/humanizer
+
+- `humanizer` — rewrite AI-sounding text so it reads like the writer, based on Wikipedia's "Signs of AI writing"; for scripts, captions and on-screen copy.
+
+### addyosmani/agent-skills (25 skills)
+
+Upstream: https://github.com/addyosmani/agent-skills
+
+- `api-and-interface-design`
+- `browser-testing-with-devtools`
+- `ci-cd-and-automation`
+- `code-review-and-quality`
+- `code-simplification`
+- `constraint-driven-development`
+- `context-engineering`
+- `debugging-and-error-recovery`
+- `deprecation-and-migration`
+- `documentation-and-adrs`
+- `doubt-driven-development`
+- `frontend-ui-engineering`
+- `git-workflow-and-versioning`
+- `idea-refine`
+- `incremental-implementation`
+- `interview-me`
+- `observability-and-instrumentation`
+- `performance-optimization`
+- `planning-and-task-breakdown`
+- `security-and-hardening`
+- `shipping-and-launch`
+- `source-driven-development`
+- `spec-driven-development`
+- `test-driven-development`
+- `using-agent-skills`
+
 ## Deduplication notes
 
 - The `skillsllm.com/skill/motion-skills` page is a directory listing of `iart-ai/motion-skills`; its 19 packs were installed once, not twice.
@@ -387,6 +476,8 @@ Authored, deterministic, code-driven motion ranks above assembled stock footage.
 - `VideoZero/motion-canvas` is a Motion Canvas framework fork, not a skill pack; it contains no `SKILL.md`. Its companion skill pack, `VideoZero/skills`, is installed (3 skills).
 - `AftabIbrahimKazi/ai-dev-kit` slash commands (`skills/commands/`) and its `install-kit` meta-installer were not installed as skills; all 56 installable skills from its own catalog were installed.
 
+- Fourth pass (2026-11-06): `huashu-motion`, `explainroo` and `earshot`/`real-sound` install as knowledge skills; their render engines live upstream (npm `huashu-motion` templates/runtime, npm `explainroo`, Python `earshot` CLI) and are fetched at run time when needed.
+- `hyperframes` skills reference the upstream `hyperframes` npm CLI/framework for actual rendering.
 ## Use
 
 Ask for the work normally — the matching skill is loaded by description. You can also name a skill explicitly, e.g. `use the gsap-scrolltrigger skill`.
